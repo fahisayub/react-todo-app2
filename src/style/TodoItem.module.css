@@ -1,0 +1,44 @@
+.task{
+    justify-content: space-between;
+    display: flex;
+    margin: 10px;
+    text-align: center;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding:5px;
+    
+    
+}
+.task>div{
+    display: flex;
+    font-size: larger;
+}
+.task:checked{
+    background-color: rgba(142, 233, 142, 0.51);
+
+}
+.content{
+    text-decoration-line:line-through;
+}
+input[type='checkbox']{
+    appearance: none;
+  
+    border-radius: 10%;
+    width: 20px;height: 20px;
+  
+    border: 1px solid rgb(35, 35, 35);
+    background-color: white;
+    
+    transition: 0.2s all linear;
+    margin-right: 5px;
+  
+    position: relative;
+    top: 4px;
+}
+input:checked {
+    border: 1px solid green;    background-color: green;
+
+    background-image:url(../assets/checked.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
