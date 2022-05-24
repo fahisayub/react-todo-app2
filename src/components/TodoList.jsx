@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TodoItem from './TodoItem';
 import TaskCompleted from './TaskCompleted';
+import style from '../style/TodoList.module.css'
 const TodoList = ({tasklist,onDelete}) => {
 const [completedlist,setCompletedlist]=useState([]);
 const[showcompleted, setshowdone]=useState(false);
@@ -13,11 +14,11 @@ const onCDelete=(id)=>{
 
 }
     return (
-        <div>
+        <div className={style.todolist}>
             {tasklist.map((prop)=>(
                 <TodoItem key={prop.id} completedlist={completedlist} setCompleted={setCompletedlist} {...prop} onDelete={onDelete}/>
             ))}
-            <button onClick={onshow}>Show Completed Todos</button>
+            <button className={style.showbtn} onClick={onshow}>Show Completed Todos</button>
             <div>{showcompleted?<TaskCompleted completedlist={completedlist} onDelete={onCDelete}/>:''}</div>
         </div>
     );

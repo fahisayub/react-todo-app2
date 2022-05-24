@@ -8,19 +8,31 @@ const TodoInput = ({ setTasklist,tasklist }) => {
   let handleQuery = (e) => {
     setQuery(e.target.value);
   };
-
-  let savetaskhandler=()=>{
-    let  data={
-        id:uuidv4(),
-         isComplete:false,
+let savetask=()=>{
+  fetch('http://localhost:3004/todos',{
+    method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({
+      isComplete:false,
           text:query,
           important:false,
-      }
+    }),
+  }).then((result)=>result.json()).then((data)=>{
+    setTasklist([...tasklist,data]);
+    setQuery('');
+  })
+}
+//   let savetaskhandler=()=>{
+    
+//     let  data={
+//         id:uuidv4(),
+//          isComplete:false,
+//           text:query,
+//           important:false,
+//       }
      
 
-setTasklist([...tasklist,data])
-setQuery('');
-  }
+// setTasklist([...tasklist,data]);
+// setQuery('');
+//   }
   return (
     <div className={style.inputbox}>
       <input
@@ -29,7 +41,7 @@ setQuery('');
         onChange={handleQuery}
         placeholder="Type Something..."
       />
-      <button onClick={savetaskhandler}>+</button>
+      <button onClick={savetask}>+</button>
     </div>
   );
 };

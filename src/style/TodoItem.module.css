@@ -6,8 +6,11 @@
     border: 1px solid black;
     box-sizing: border-box;
     padding:5px;
+
     
-    
+}
+.task:hover{
+    background-color: rgba(158, 237, 158, 0.215);
 }
 .task>div{
     display: flex;
@@ -23,8 +26,8 @@
 input[type='checkbox']{
     appearance: none;
   
-    border-radius: 10%;
-    width: 20px;height: 20px;
+    border-radius: 25%;
+    width: 25px;height: 25px;
   
     border: 1px solid rgb(35, 35, 35);
     background-color: white;
@@ -41,4 +44,9 @@ input:checked {
     background-image:url(../assets/checked.svg);
     background-repeat: no-repeat;
     background-position: center;
+  }
+  .deletebtn{
+      color: grey;
+      background-color: white;
+      border: none;
   }

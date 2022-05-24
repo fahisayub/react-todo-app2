@@ -1,0 +1,14 @@
+.showbtn{
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(194, 105, 230, 0.673);
+    color: white;
+    
+}
+.todolist{
+    height: 85%;
+    overflow-y: auto;
+ scroll-behavior: smooth;
+ box-sizing: border-box;
+ 
+}

@@ -13,10 +13,10 @@ const TodoItem = (props) => {
     return (
         <div className={style.task}  style={ischecked?{backgroundColor:'rgba(142, 233, 142, 0.51)'}:{}}>
             <div><input type="checkbox"  checked={ischecked} onChange={handlecheckbox} />
-            <div className={ischecked?style.content:''}>{props.text}</div></div>
+            <div className={ischecked?style.content:''}>{props.id}. {props.text}</div></div>
             
             
-            <button onClick={()=>{props.onDelete(props.id)}}>x</button>
+            <button className={style.deletebtn} onClick={()=>{props.onDelete(props.id)}}>x</button>
         </div>
     );
 };
