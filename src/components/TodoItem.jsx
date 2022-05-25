@@ -27,7 +27,7 @@ const TodoItem = (props) => {
             <div><input type="checkbox"  checked={ischecked} onChange={handlecheckbox} />
             <div className={ischecked?style.content:''}>{props.id}. {props.text}</div></div>
             
-            <button>edit</button>
+            {/* <button>edit</button> */}
             <button className={style.deletebtn} onClick={()=>{props.onDelete(props.id)}}>x</button>
         </div>
     );
